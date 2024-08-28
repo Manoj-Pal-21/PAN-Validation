@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use("/pan", (req, res) => {
     res.send("server is running")
-  })
+})
 
 app.use('/api', panRoutes);
 
@@ -21,8 +21,8 @@ app.use(express.static(frontendPath));
 
 // Serve index.html for all other routes (SPA support)
 app.get('*', (req, res) => {
-  console.log(frontendPath)
-  res.sendFile(path.join(frontendPath, 'index.html'));
+    console.log(frontendPath)
+    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 app.listen(PORT, () => {
